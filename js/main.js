@@ -48,7 +48,16 @@
             });
         }
     
+        // Update active link when scrolling
         window.addEventListener("scroll", updateActiveNav);
+    
+        // Update active link when a nav link is clicked
+        navLinks.forEach((link) => {
+            link.addEventListener("click", function () {
+                navLinks.forEach((nav) => nav.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
     });
     
     // Back to top button
